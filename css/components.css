@@ -1,0 +1,48 @@
+/* ==========================
+   COMPONENTS.CSS - ONG AMEMAIS
+   ========================== */
+
+/* 🎯 Botões */
+button, .btn {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branco);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--cor-secundaria);
+}
+
+button:disabled {
+  background-color: var(--cor-cinza);
+  cursor: not-allowed;
+}
+
+/* 🧩 Cards */
+.card {
+  background: var(--cor-branco);
+  border: 1px solid var(--cor-cinza);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* 🏷️ Tags */
+.tag {
+  display: inline-block;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-branco);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin: 2px;
+}
