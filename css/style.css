@@ -1,56 +1,133 @@
-/* ==========================
-   STYLE.CSS - ONG AMEMAIS
-   ========================== */
-
-/* 🎨 Paleta de cores */
-:root {
-  --cor-primaria: #2a9d8f;
-  --cor-secundaria: #e9c46a;
-  --cor-destaque: #f4a261;
-  --cor-erro: #e76f51;
-  --cor-fundo: #fefefe;
-  --cor-texto: #333;
-  --cor-cinza: #ccc;
-  --cor-branco: #fff;
-}
-
-/* 🧱 Tipografia e espaçamento */
+/* ================================
+   ESTILOS BÁSICOS
+================================ */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--cor-texto);
-  background-color: var(--cor-fundo);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f5f5f5;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
 }
 
-/* 🧭 Cabeçalho */
+h1, h2, h3 {
+  color: #ff6b6b;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* ================================
+   HEADER E NAV
+================================ */
 header {
-  background: var(--cor-primaria);
-  color: var(--cor-branco);
-  padding: 16px;
+  background-color: #ff6b6b;
+  color: white;
+  padding: 20px;
   text-align: center;
 }
 
-header nav a {
-  color: var(--cor-branco);
+nav a {
+  color: white;
   text-decoration: none;
   margin: 0 10px;
-  font-weight: bold;
 }
 
-header nav a:hover {
-  color: var(--cor-secundaria);
+nav a:hover {
+  text-decoration: underline;
 }
 
-/* 📱 Layout Responsivo */
+/* ================================
+   GRID SIMPLES DE PROJETOS
+================================ */
+.grid-projetos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 300px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* ================================
+   FORMULÁRIO SIMPLES
+================================ */
+form {
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff8787;
+}
+
+/* ================================
+   FOOTER
+================================ */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* ================================
+   RESPONSIVO BÁSICO
+================================ */
 @media (max-width: 768px) {
-  header nav {
+  .grid-projetos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
-  header nav a {
-    margin: 8px 0;
+  nav a {
+    margin: 5px 0;
   }
 }
+
