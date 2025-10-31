@@ -1,48 +1,56 @@
-/* ==========================
-   COMPONENTS.CSS - ONG AMEMAIS
-   ========================== */
-
-/* 🎯 Botões */
-button, .btn {
-  background-color: var(--cor-primaria);
-  color: var(--cor-branco);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+/* Botões */
+button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
-button:hover, .btn:hover {
-  background-color: var(--cor-secundaria);
+button:hover {
+    background-color: #e65500;
 }
 
-button:disabled {
-  background-color: var(--cor-cinza);
-  cursor: not-allowed;
-}
-
-/* 🧩 Cards */
+/* Cards de projetos */
 .card {
-  background: var(--cor-branco);
-  border: 1px solid var(--cor-cinza);
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.card img {
+    max-width: 100%;
+    border-radius: 5px;
 }
 
-/* 🏷️ Tags */
-.tag {
-  display: inline-block;
-  background-color: var(--cor-secundaria);
-  color: var(--cor-branco);
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 12px;
-  margin: 2px;
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form select {
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Alertas simples */
+.alert {
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+    padding: 10px;
+    margin: 10px 0;
 }
