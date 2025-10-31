@@ -1,70 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - ONG Amemais</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - ONG Amemais</title>
+
+  <!-- ✅ Importando os arquivos CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <!-- ✅ Script para máscara de CPF, telefone e CEP -->
+  <script>
+    function mascara(t, mask){
+      let i = t.value.length;
+      let saida = mask.substring(0,1);
+      let texto = mask.substring(i)
+      if (texto.substring(0,1) != saida){
+        t.value += texto.substring(0,1);
+      }
+    }
+  </script>
 </head>
+
 <body>
-    <header>
-        <h1>Cadastro - ONG Amemais</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section>
-            <h2>Preencha seus dados</h2>
-            <form>
-                <fieldset>
-                    <legend>Informações Pessoais</legend>
+  <!-- 🐾 Cabeçalho -->
+  <header>
+    <h1>ONG Amemais</h1>
+    <p>Cuidando com amor dos animais de rua</p>
 
-                    <label for="nome">Nome Completo:</label><br>
-                    <input type="text" id="nome" name="nome" required><br><br>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="cadastro.html">Cadastro</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+  </header>
 
-                    <label for="email">E-mail:</label><br>
-                    <input type="email" id="email" name="email" required><br><br>
+  <!-- 📝 Formulário de Cadastro -->
+  <main>
+    <section id="cadastro">
+      <h2>Cadastre-se para Voluntariado ou Doações</h2>
+      <form action="#" method="POST">
+        
+        <!-- Dados Pessoais -->
+        <fieldset>
+          <legend>Dados Pessoais</legend>
 
-                    <label for="cpf">CPF:</label><br>
-                    <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Formato: 000.000.000-00"><br><br>
+          <label for="nome">Nome Completo:</label>
+          <input type="text" id="nome" name="nome" required>
 
-                    <label for="telefone">Telefone:</label><br>
-                    <input type="tel" id="telefone" name="telefone" pattern="\(\d{2}\)\s?\d{4,5}-\d{4}" title="Formato: (33) 99999-9999" required><br><br>
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
 
-                    <label for="dataNascimento">Data de Nascimento:</label><br>
-                    <input type="date" id="dataNascimento" name="dataNascimento" required><br><br>
-                </fieldset>
+          <label for="cpf">CPF:</label>
+          <input type="text" id="cpf" name="cpf" maxlength="14" oninput="mascara(this,'###.###.###-##')" placeholder="000.000.000-00" required>
 
-                <fieldset>
-                    <legend>Endereço</legend>
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone" maxlength="15" oninput="mascara(this,'(##) #####-####')" placeholder="(33) 99999-0000" required>
 
-                    <label for="endereco">Endereço:</label><br>
-                    <input type="text" id="endereco" name="endereco" required><br><br>
+          <label for="dataNascimento">Data de Nascimento:</label>
+          <input type="date" id="dataNascimento" name="dataNascimento" required>
+        </fieldset>
 
-                    <label for="cep">CEP:</label><br>
-                    <input type="text" id="cep" name="cep" pattern="\d{5}-\d{3}" title="Formato: 00000-000" required><br><br>
+        <!-- Endereço -->
+        <fieldset>
+          <legend>Endereço</legend>
 
-                    <label for="cidade">Cidade:</label><br>
-                    <input type="text" id="cidade" name="cidade" required><br><br>
+          <label for="endereco">Endereço:</label>
+          <input type="text" id="endereco" name="endereco" required>
 
-                    <label for="estado">Estado:</label><br>
-                    <input type="text" id="estado" name="estado" maxlength="2" placeholder="UF" required><br><br>
-                </fieldset>
+          <label for="cep">CEP:</label>
+          <input type="text" id="cep" name="cep" maxlength="9" oninput="mascara(this,'#####-###')" placeholder="00000-000" required>
 
-                <button type="submit">Enviar</button>
-                <button type="reset">Limpar</button>
-            </form>
-        </section>
-    </main>
+          <label for="cidade">Cidade:</label>
+          <input type="text" id="cidade" name="cidade" required>
 
-    <footer>
-        <p>Contato: (33) 99999-9999 | E-mail: contato@amemais.org.br</p>
-        <p>&copy; 2025 ONG Amemais</p>
-    </footer>
+          <label for="estado">Estado:</label>
+          <select id="estado" name="estado" required>
+            <option value="">Selecione</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="SP">São Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="ES">Espírito Santo</option>
+            <!-- Adicione outros estados conforme necessário -->
+          </select>
+        </fieldset>
+
+        <button type="submit" class="btn">Enviar Cadastro</button>
+
+      </form>
+    </section>
+  </main>
+
+  <!-- 🦴 Rodapé -->
+  <footer>
+    <p>&copy; 2025 ONG Amemais - Todos os direitos reservados.</p>
+  </footer>
+
 </body>
 </html>
+
