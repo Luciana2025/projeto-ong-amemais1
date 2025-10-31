@@ -1,0 +1,56 @@
+/* ==========================
+   STYLE.CSS - ONG AMEMAIS
+   ========================== */
+
+/* 🎨 Paleta de cores */
+:root {
+  --cor-primaria: #2a9d8f;
+  --cor-secundaria: #e9c46a;
+  --cor-destaque: #f4a261;
+  --cor-erro: #e76f51;
+  --cor-fundo: #fefefe;
+  --cor-texto: #333;
+  --cor-cinza: #ccc;
+  --cor-branco: #fff;
+}
+
+/* 🧱 Tipografia e espaçamento */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* 🧭 Cabeçalho */
+header {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+  padding: 16px;
+  text-align: center;
+}
+
+header nav a {
+  color: var(--cor-branco);
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* 📱 Layout Responsivo */
+@media (max-width: 768px) {
+  header nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header nav a {
+    margin: 8px 0;
+  }
+}
